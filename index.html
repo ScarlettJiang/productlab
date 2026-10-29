@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Product Lab | Learn · Build · Evaluate</title>
+<meta name="description" content="A practical, 12-week learning lab for LLM fundamentals, model evaluations and agents.">
+<style>
+:root{color-scheme:dark;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#101a20;color:#eaf2ef}
+*{box-sizing:border-box}body{margin:0;line-height:1.6}a{color:#99e3c9}header{padding:24px 6%;background:#17252c;border-bottom:1px solid #2b4148}
+.wrap{max-width:1050px;margin:auto}.eyebrow{color:#9ee1c7;letter-spacing:.15em;font-size:12px;font-weight:700}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.2;margin:8px 0}h2{font-size:23px;margin:0 0 12px}h3{margin:0 0 8px}p{color:#b5c9c9}
+main{padding:30px 6% 75px}.hero{margin-bottom:24px}.stats{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+.progress{height:9px;background:#34474c;border-radius:99px;overflow:hidden;flex:1;min-width:140px}.fill{height:100%;background:#87d8b7;width:0;transition:width .2s}
+.layout{display:grid;grid-template-columns:280px 1fr;gap:18px}.panel{border:1px solid #324950;background:#17252c;border-radius:16px;padding:20px;margin-bottom:16px}
+button{font:inherit;cursor:pointer;border-radius:9px;border:1px solid #426068;background:#253940;color:#eaf2ef;padding:10px 13px}button:hover,button.active{border-color:#91dec2;background:#2d4d4a}button.primary{background:#9ee1c7;color:#102622;border-color:#9ee1c7;font-weight:700}
+.week{display:block;width:100%;text-align:left;margin:5px 0;padding:10px;font-size:14px}.week .num{color:#9fc5c0;font-size:12px}
+.module{font-size:12px;font-weight:700;color:#90d9bd;text-transform:uppercase;margin-top:17px}strong{color:#e9f8f1}.pill{display:inline-block;color:#a5edd1;background:#26453c;border-radius:99px;padding:4px 10px;font-size:12px;margin-bottom:12px}
+.label{font-size:12px;font-weight:700;color:#9ee1c7;text-transform:uppercase;letter-spacing:.09em;margin:18px 0 5px}
+textarea{width:100%;min-height:140px;background:#101d23;border:1px solid #436168;color:#eaf2ef;padding:12px;border-radius:10px;font:inherit;resize:vertical}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.muted{font-size:13px;color:#a9bec0}
+details{margin-top:15px;border-top:1px solid #31464b;padding-top:12px}summary{cursor:pointer;color:#aee5cf}
+.footer{font-size:12px;color:#93a6a8;border-top:1px solid #31464b;padding-top:20px;margin-top:30px}
+@media(max-width:740px){.layout{grid-template-columns:1fr}header{padding:22px 5%}main{padding:22px 5% 60px}}
+</style></head>
+<body><header><div class="wrap"><div class="eyebrow">LEARNING / BUILDING / EVIDENCE</div><h1>AI Product Lab</h1><p>12 周学习与实验路线：从 LLM 原理，到 Evals、Agent，再到可复现的产品作品。</p></div></header>
+<main class="wrap"><div class="panel hero"><div class="stats"><strong id="count">0 / 12 completed</strong><div class="progress"><div class="fill" id="bar"></div></div><button id="export">导出本机笔记</button></div><p class="muted">进度与笔记仅存在当前浏览器，不上传到 GitHub 或服务器。请仅记录非敏感内容；换设备不会自动同步。</p></div>
+<div class="layout"><nav class="panel" id="sidebar" aria-label="课程目录"></nav><div><section class="panel" id="lesson"></section><section class="panel"><h3>作品集里程碑</h3><p><strong>① Model Evaluation Lab</strong>：构建合成测试集、评分器、错误切片和回归报告。</p><p><strong>② Issue Triage Agent</strong>：用虚构工单演示 Agent Loop、工具调用和可靠性评测。</p><p><strong>③ Mobility Pickup Evaluation Lab</strong>：使用虚构地图点位，比较规则基线与候选 AI 方案的质量、安全和成本。</p></section></div></div>
+<div class="footer">AI Product Lab · Public learning only · Never publish employer, customer, personal, confidential or licensed data. This site uses no analytics or remote note storage.</div></main>
+<script>
+const modules=[
+{name:"01 · LLM Fundamentals",weeks:[
+["LLM 是如何生成答案的？","Token、Embedding、Transformer、Attention、Context Window、Sampling。","使用公开的 tokenizer 演示，记录同一句话的 token 数与输出差异。","1 页模型结构图。","https://jalammar.github.io/illustrated-transformer/"],
+["模型怎样学习？","Pre-training、Loss、Gradient Descent、Fine-tuning、SFT、RLHF。","使用公开教程或本地 notebook 跑一个极小的训练/微调例子。","训练与推理的区别说明。","https://huggingface.co/learn/llm-course/chapter1/1"],
+["为什么模型会失败？","知识、推理、指令遵循、工具与系统故障的区别。","对 20 个合成问题建立故障分类，并人工复核。","失败分类表。","https://platform.openai.com/docs/guides/evaluation-best-practices"]]},
+{name:"02 · Model Evals",weeks:[
+["Evals 到底测什么？","Capability vs Behavior vs End-to-end；测试集、Rubric、Ground Truth。","为一个公开小任务写 10 条测试用例、期望行为和判分规则。","Eval Spec v1。","https://github.com/openai/evals"],
+["做一次可重复评测","Accuracy、Precision/Recall、混淆矩阵、切片、误差预算。","对合成分类样本编写评分脚本，计算指标。","首份指标报告。","https://scikit-learn.org/stable/modules/model_evaluation.html"],
+["从失败案例到回归验证","Error Taxonomy、Judge Calibration、Regression、实验对照。","针对失败类别修改 prompt 或流程，重新评测同一批样本。","Before/After 决策备忘录。","https://platform.openai.com/docs/guides/evaluation-best-practices"]]},
+{name:"03 · Agents & Reliability",weeks:[
+["Agent 架构与边界","Model、Tool、Harness、Agent Loop、Guardrail、Human Handoff。","画出一张含失败处理与人工接管的 Agent 状态图。","Agent Architecture v1。","https://www.anthropic.com/engineering/building-effective-agents"],
+["构建一个小型 Agent","Tool Calling、State、Retries、Observability、Cost。","使用纯合成工单完成分类、检索与升级建议（允许规则或 mock 实现）。","可运行演示与测试样例。","https://openai.github.io/openai-agents-python/"],
+["Agent Evals 与发布门槛","Task Success、Tool Accuracy、Safety、Latency、Cost、Trace。","对 30 个虚构任务进行端到端评测，按失败类型归因。","Agent Eval Report。","https://docs.smith.langchain.com/evaluation"]]},
+{name:"04 · Portfolio & Decisions",weeks:[
+["设计出行接驾评测问题","约束、公开/合成场景、Rule-based Baseline、Failure Slice。","使用虚构接驾点位和路线构建 5–20 个场景；不得使用真实业务数据。","Mobility Eval Spec。","https://platform.openai.com/docs/guides/evaluation-best-practices"],
+["比较质量与产品价值","Success Rate、Distance、Safety Constraints、Interventions、ROI。","对合成场景运行两种候选策略，写清取舍与置信度限制。","Comparison & Decision Memo。","https://scikit-learn.org/stable/modules/model_evaluation.html"],
+["整理作品集与模拟面试","Problem → Baseline → Eval → Failure → Iteration → Outcome。","整理 3 张一页纸 Case Study，演练 AI 产品负责人问答。","公开作品集（仅非敏感材料）。","https://www.anthropic.com/engineering/building-effective-agents"]]}
+];
+const weeks=modules.flatMap((m,i)=>m.weeks.map((w,j)=>({id:i*3+j+1,module:m.name,title:w[0],concept:w[1],practice:w[2],deliverable:w[3],source:w[4]})));
+const key="ai-product-lab-public-v1";let store={};try{store=JSON.parse(localStorage.getItem(key)||"{}")}catch(e){}let current=1;
+function save(){localStorage.setItem(key,JSON.stringify(store));drawProgress()}
+function drawProgress(){const n=weeks.filter(w=>store[w.id]?.done).length;document.getElementById("count").textContent=n+" / 12 completed";document.getElementById("bar").style.width=(n/12*100)+"%"}
+function nav(){let html="";modules.forEach((m,i)=>{html+='<div class="module">'+m.name+"</div>";m.weeks.forEach((w,j)=>{let id=i*3+j+1;html+='<button class="week '+(current===id?"active":"")+'" data-week="'+id+'"><span class="num">Week '+id+' '+(store[id]?.done?"✓":"")+'</span><br>'+w[0]+"</button>"})});document.getElementById("sidebar").innerHTML=html;document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{current=Number(b.dataset.week);render()})}
+function render(){nav();drawProgress();const w=weeks[current-1],s=store[current]||{};document.getElementById("lesson").innerHTML='<span class="pill">Week '+current+' / 12</span><h2>'+w.title+'</h2><p class="muted">'+w.module+'</p><div class="label">核心概念</div><p>'+w.concept+'</p><div class="label">本周动手做</div><p>'+w.practice+'</p><div class="label">可验证交付物</div><p><strong>'+w.deliverable+'</strong></p><div class="label">参考资料</div><p><a href="'+w.source+'" target="_blank" rel="noopener noreferrer">打开公开学习资料 ↗</a></p><div class="label">实验记录（仅保存在本机）</div><textarea id="note" placeholder="假设、实验方法、结果、失败归因、下一步。请勿记录公司或个人敏感信息。"></textarea><div class="actions"><button id="save" class="primary">保存本机笔记</button><button id="done">'+(s.done?"✓ 已完成 · 点击取消":"标记本周完成")+'</button></div><details><summary>隐私与数据说明</summary><p>这是静态网站。笔记和完成状态保存在当前浏览器 localStorage，不会自动上传。导出会生成一个本地 JSON 文件；请妥善保管，不要提交到公共仓库。</p></details>';
+document.getElementById("note").value=s.note||"";document.getElementById("save").onclick=()=>{store[current]={...store[current],note:document.getElementById("note").value};save()};document.getElementById("done").onclick=()=>{store[current]={...store[current],note:document.getElementById("note").value,done:!store[current]?.done};save();render()}}
+document.getElementById("export").onclick=()=>{const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),progress:store},null,2)],{type:"application/json"});const u=URL.createObjectURL(blob);const a=document.createElement("a");a.href=u;a.download="productlab-local-progress.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
+render();
+</script></body></html>
