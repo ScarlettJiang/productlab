@@ -3,26 +3,34 @@
 <title>AI Product Lab | Learn · Build · Evaluate</title>
 <meta name="description" content="A practical, 12-week learning lab for LLM fundamentals, model evaluations and agents.">
 <style>
-:root{color-scheme:dark;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#101a20;color:#eaf2ef}
-*{box-sizing:border-box}body{margin:0;line-height:1.6}a{color:#99e3c9}header{padding:24px 6%;background:#17252c;border-bottom:1px solid #2b4148}
-.wrap{max-width:1050px;margin:auto}.eyebrow{color:#9ee1c7;letter-spacing:.15em;font-size:12px;font-weight:700}
-h1{font-size:clamp(28px,5vw,44px);line-height:1.2;margin:8px 0}h2{font-size:23px;margin:0 0 12px}h3{margin:0 0 8px}p{color:#b5c9c9}
-main{padding:30px 6% 75px}.hero{margin-bottom:24px}.stats{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
-.progress{height:9px;background:#34474c;border-radius:99px;overflow:hidden;flex:1;min-width:140px}.fill{height:100%;background:#87d8b7;width:0;transition:width .2s}
-.layout{display:grid;grid-template-columns:280px 1fr;gap:18px}.panel{border:1px solid #324950;background:#17252c;border-radius:16px;padding:20px;margin-bottom:16px}
-button{font:inherit;cursor:pointer;border-radius:9px;border:1px solid #426068;background:#253940;color:#eaf2ef;padding:10px 13px}button:hover,button.active{border-color:#91dec2;background:#2d4d4a}button.primary{background:#9ee1c7;color:#102622;border-color:#9ee1c7;font-weight:700}
-.week{display:block;width:100%;text-align:left;margin:5px 0;padding:10px;font-size:14px}.week .num{color:#9fc5c0;font-size:12px}
-.module{font-size:12px;font-weight:700;color:#90d9bd;text-transform:uppercase;margin-top:17px}strong{color:#e9f8f1}.pill{display:inline-block;color:#a5edd1;background:#26453c;border-radius:99px;padding:4px 10px;font-size:12px;margin-bottom:12px}
-.label{font-size:12px;font-weight:700;color:#9ee1c7;text-transform:uppercase;letter-spacing:.09em;margin:18px 0 5px}
-textarea{width:100%;min-height:140px;background:#101d23;border:1px solid #436168;color:#eaf2ef;padding:12px;border-radius:10px;font:inherit;resize:vertical}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.muted{font-size:13px;color:#a9bec0}
-details{margin-top:15px;border-top:1px solid #31464b;padding-top:12px}summary{cursor:pointer;color:#aee5cf}
-.footer{font-size:12px;color:#93a6a8;border-top:1px solid #31464b;padding-top:20px;margin-top:30px}
-@media(max-width:740px){.layout{grid-template-columns:1fr}header{padding:22px 5%}main{padding:22px 5% 60px}}
+:root{color-scheme:light;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;background:#f6f7f4;color:#172723;font-synthesis:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;line-height:1.65}a{color:#196a57;text-underline-offset:3px}a:hover{color:#103c32}
+header{padding:24px 5% 48px;background:#172e29;color:#fff;position:relative;overflow:hidden}header:after{content:"";position:absolute;width:430px;height:430px;right:-120px;top:-210px;border:1px solid #6c9b88;border-radius:50%;box-shadow:0 0 0 75px #ffffff05,0 0 0 150px #ffffff05;pointer-events:none}
+.wrap{max-width:1180px;margin:auto}.eyebrow{color:#b6d4c4;letter-spacing:.2em;font-size:11px;font-weight:750;text-transform:uppercase}
+h1{font-size:clamp(37px,5vw,59px);line-height:1.11;letter-spacing:-.048em;margin:25px 0 15px;font-weight:780}h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.035em;line-height:1.3;margin:0 0 12px}h3{font-size:20px;margin:0 0 16px;letter-spacing:-.025em}p{color:#60736b;margin:8px 0 15px}header p{color:#c7d6d0;max-width:650px;font-size:16px}
+main{padding:0 5% 72px}.hero{margin-top:-26px;position:relative;z-index:2;margin-bottom:26px!important;box-shadow:0 15px 30px #172e2910}
+.stats{display:flex;align-items:center;gap:22px;flex-wrap:wrap}.stats strong{font-size:20px;letter-spacing:-.03em;color:#15382d}
+.progress{height:10px;background:#e5ece7;border-radius:99px;overflow:hidden;flex:1;min-width:140px}.fill{height:100%;background:linear-gradient(90deg,#318d70,#9dcc9d);width:0;transition:width .25s}
+.layout{display:grid;grid-template-columns:295px minmax(0,1fr);gap:24px;align-items:start}.panel{border:1px solid #e3e8e1;background:#fff;border-radius:18px;padding:28px;margin-bottom:22px;box-shadow:0 4px 18px #172e2908}
+nav.panel{padding:19px;max-height:calc(100vh - 28px);overflow:auto;position:sticky;top:14px}
+button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid #dce6dd;background:#fff;color:#27473b;padding:10px 15px;transition:background .15s,border-color .15s,transform .15s}button:hover{background:#f1f7f1;border-color:#a5cbb9}button:focus-visible,a:focus-visible{outline:3px solid #83b7a3;outline-offset:2px}button.primary{background:#1c5948;color:#fff;border-color:#1c5948;font-weight:700}button.primary:hover{background:#123f33}
+.week{display:block;width:100%;text-align:left;margin:5px 0;padding:11px 13px;font-size:13px;line-height:1.55;border:1px solid transparent;background:transparent;border-radius:10px;color:#3f574d}.week:hover{background:#f1f7f3;border-color:transparent}.week.active{background:#e8f4ed;border-color:#c6e5d3;color:#164b37;font-weight:700}.week .num{color:#71877b;font-size:11px;letter-spacing:.06em;font-weight:650}
+.module{font-size:11px;font-weight:800;color:#377f60;text-transform:uppercase;margin:19px 6px 9px;letter-spacing:.055em}
+strong{color:#253a30}.pill{display:inline-block;color:#216346;background:#e6f2e9;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:700;margin-bottom:16px}
+.label{font-size:11px;font-weight:800;color:#39825d;text-transform:uppercase;letter-spacing:.105em;margin:24px 0 8px}
+#lesson{min-height:630px;padding:38px}#lesson p{font-size:15px;line-height:1.85}#lesson h2{font-size:33px}
+textarea{width:100%;min-height:156px;background:#f8faf7;border:1px solid #d9e3d9;color:#223c30;padding:15px;border-radius:12px;font:inherit;resize:vertical;outline-color:#4a9a76}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.muted{font-size:12px!important;color:#87958b!important;line-height:1.7!important}
+details{margin-top:19px;border-top:1px solid #e3eae5;padding-top:17px}summary{cursor:pointer;color:#3a8060;font-size:13px}
+.footer{font-size:12px;color:#839388;border-top:1px solid #dfe6de;padding-top:24px;margin-top:34px}
+.brandline{display:flex;align-items:center;gap:11px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d8eae2}.brandmark{background:#b7e1c0;color:#183f33;width:31px;height:31px;border-radius:9px;display:grid;place-items:center;font-size:18px;letter-spacing:0}.hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.hero-chips span{border:1px solid #4e6a60;background:#ffffff0c;color:#d5e5dc;border-radius:30px;padding:6px 12px;font-size:12px}
+.portfolio p{padding:14px 0;border-top:1px solid #e8ede8;margin:0}.portfolio p strong{display:block;margin-bottom:3px}
+@media(max-width:790px){.layout{grid-template-columns:1fr}nav.panel{position:static;max-height:330px}header{padding:22px 5% 55px}main{padding:0 5% 55px}#lesson{padding:25px;min-height:auto}#lesson h2{font-size:27px}.panel{padding:21px}.hero{margin-top:-27px}.stats{gap:12px}.stats .progress{order:3;flex-basis:100%}.week{display:inline-block;width:calc(50% - 5px);vertical-align:top;min-height:64px;font-size:12px}h1{margin:20px 0}}
+@media(max-width:410px){.week{width:100%}}
 </style></head>
-<body><header><div class="wrap"><div class="eyebrow">LEARNING / BUILDING / EVIDENCE</div><h1>AI Product Lab</h1><p>12 周学习与实验路线：从 LLM 原理，到 Evals、Agent，再到可复现的产品作品。</p></div></header>
+<body><header><div class="wrap"><div class="brandline"><span class="brandmark">✳</span> PRODUCT THINKING · AI BUILDING</div><div class="eyebrow" style="margin-top:32px">YOUR PRACTICAL AI LEARNING SPACE</div><h1>Build better AI.<br>Learn by doing.</h1><p>一个为 AI 产品负责人设计的实践工作台：理解 LLM，设计 Evals，构建 Agent，把学习变成可以展示的成果。</p><div class="hero-chips"><span>12 WEEK ROADMAP</span><span>3 PORTFOLIO PROJECTS</span><span>HANDS-ON LEARNING</span></div></div></header>
 <main class="wrap"><div class="panel hero"><div class="stats"><strong id="count">0 / 12 completed</strong><div class="progress"><div class="fill" id="bar"></div></div><button id="export">导出本机笔记</button></div><p class="muted">进度与笔记仅存在当前浏览器，不上传到 GitHub 或服务器。请仅记录非敏感内容；换设备不会自动同步。</p></div>
-<div class="layout"><nav class="panel" id="sidebar" aria-label="课程目录"></nav><div><section class="panel" id="lesson"></section><section class="panel"><h3>作品集里程碑</h3><p><strong>① Model Evaluation Lab</strong>：构建合成测试集、评分器、错误切片和回归报告。</p><p><strong>② Issue Triage Agent</strong>：用虚构工单演示 Agent Loop、工具调用和可靠性评测。</p><p><strong>③ Mobility Pickup Evaluation Lab</strong>：使用虚构地图点位，比较规则基线与候选 AI 方案的质量、安全和成本。</p></section></div></div>
+<div class="layout"><nav class="panel" id="sidebar" aria-label="课程目录"></nav><div><section class="panel" id="lesson"></section><section class="panel portfolio"><h3>Portfolio · 作品集里程碑</h3><p><strong>① Model Evaluation Lab</strong>：构建合成测试集、评分器、错误切片和回归报告。</p><p><strong>② Issue Triage Agent</strong>：用虚构工单演示 Agent Loop、工具调用和可靠性评测。</p><p><strong>③ Mobility Pickup Evaluation Lab</strong>：使用虚构地图点位，比较规则基线与候选 AI 方案的质量、安全和成本。</p></section></div></div>
 <div class="footer">AI Product Lab · Public learning only · Never publish employer, customer, personal, confidential or licensed data. This site uses no analytics or remote note storage.</div></main>
 <script>
 const modules=[
