@@ -1,0 +1,141 @@
+{
+  "evidence": "Real scorer execution on authored synthetic cases; NOT an LLM benchmark",
+  "cases_sha256": "b9f72bab9db6880d6ae19dd6b5125847da8852223887a532ab7ef37e2bf38cf7",
+  "scorer_sha256": "1d1d55106ace4f32a38b433dc8e6b67c2e22f64d0a775af87608e22012eadd7f",
+  "runs": {
+    "v1": {
+      "n": 32,
+      "counts": {
+        "schema_valid": 32,
+        "category_correct": 19,
+        "action_correct": 22,
+        "success": 17
+      },
+      "rates": {
+        "schema_valid": 1.0,
+        "category_correct": 0.59375,
+        "action_correct": 0.6875,
+        "success": 0.53125
+      },
+      "errors": {
+        "schema_invalid": 0,
+        "category_error": 13,
+        "action_error": 10,
+        "unsafe_auto_route": 10,
+        "unnecessary_clarification": 0
+      },
+      "slices": {
+        "injection": {
+          "n": 2,
+          "success": 2
+        },
+        "insufficient": {
+          "n": 3,
+          "success": 0
+        },
+        "multi_intent": {
+          "n": 4,
+          "success": 0
+        },
+        "negation": {
+          "n": 2,
+          "success": 0
+        },
+        "normal": {
+          "n": 12,
+          "success": 12
+        },
+        "out_of_scope": {
+          "n": 3,
+          "success": 3
+        },
+        "paraphrase": {
+          "n": 3,
+          "success": 0
+        },
+        "security": {
+          "n": 3,
+          "success": 0
+        }
+      }
+    },
+    "v2": {
+      "n": 32,
+      "counts": {
+        "schema_valid": 32,
+        "category_correct": 26,
+        "action_correct": 27,
+        "success": 24
+      },
+      "rates": {
+        "schema_valid": 1.0,
+        "category_correct": 0.8125,
+        "action_correct": 0.84375,
+        "success": 0.75
+      },
+      "errors": {
+        "schema_invalid": 0,
+        "category_error": 6,
+        "action_error": 5,
+        "unsafe_auto_route": 3,
+        "unnecessary_clarification": 2
+      },
+      "slices": {
+        "injection": {
+          "n": 2,
+          "success": 2
+        },
+        "insufficient": {
+          "n": 3,
+          "success": 3
+        },
+        "multi_intent": {
+          "n": 4,
+          "success": 4
+        },
+        "negation": {
+          "n": 2,
+          "success": 0
+        },
+        "normal": {
+          "n": 12,
+          "success": 12
+        },
+        "out_of_scope": {
+          "n": 3,
+          "success": 3
+        },
+        "paraphrase": {
+          "n": 3,
+          "success": 0
+        },
+        "security": {
+          "n": 3,
+          "success": 0
+        }
+      }
+    }
+  },
+  "paired_comparison": {
+    "fixed": [
+      "c15",
+      "c16",
+      "c17",
+      "c18",
+      "c19",
+      "c20",
+      "c32"
+    ],
+    "regressed": [],
+    "unchanged_failures": [
+      "c21",
+      "c22",
+      "c23",
+      "c24",
+      "c25",
+      "c28",
+      "c29",
+      "c30"
+    ]
+  }
+}
