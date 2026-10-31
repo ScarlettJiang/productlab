@@ -1,0 +1,14 @@
+{
+  "status": "NOT_RUN_TEMPLATE",
+  "provider": null,
+  "model_exact_version": null,
+  "run_time_utc": null,
+  "prompt_full_text": null,
+  "temperature": null,
+  "seed_if_supported": null,
+  "retry_and_parse_policy": null,
+  "cases_sha256": null,
+  "code_commit": null,
+  "raw_response_audit_location": null,
+  "latency_and_cost": null
+}

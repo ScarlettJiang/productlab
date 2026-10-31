@@ -1,0 +1,594 @@
+[
+  {
+    "id": "c01",
+    "slice": "normal",
+    "expected": {
+      "category": "billing",
+      "action": "route"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c02",
+    "slice": "normal",
+    "expected": {
+      "category": "billing",
+      "action": "route"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c03",
+    "slice": "normal",
+    "expected": {
+      "category": "billing",
+      "action": "route"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c04",
+    "slice": "normal",
+    "expected": {
+      "category": "billing",
+      "action": "route"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c05",
+    "slice": "normal",
+    "expected": {
+      "category": "access",
+      "action": "route"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c06",
+    "slice": "normal",
+    "expected": {
+      "category": "access",
+      "action": "route"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c07",
+    "slice": "normal",
+    "expected": {
+      "category": "access",
+      "action": "route"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c08",
+    "slice": "normal",
+    "expected": {
+      "category": "access",
+      "action": "route"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c09",
+    "slice": "normal",
+    "expected": {
+      "category": "bug",
+      "action": "route"
+    },
+    "output": {
+      "category": "bug",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c10",
+    "slice": "normal",
+    "expected": {
+      "category": "bug",
+      "action": "route"
+    },
+    "output": {
+      "category": "bug",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c11",
+    "slice": "normal",
+    "expected": {
+      "category": "bug",
+      "action": "route"
+    },
+    "output": {
+      "category": "bug",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c12",
+    "slice": "normal",
+    "expected": {
+      "category": "bug",
+      "action": "route"
+    },
+    "output": {
+      "category": "bug",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c13",
+    "slice": "out_of_scope",
+    "expected": {
+      "category": "other",
+      "action": "route"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c14",
+    "slice": "out_of_scope",
+    "expected": {
+      "category": "other",
+      "action": "route"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c15",
+    "slice": "insufficient",
+    "expected": {
+      "category": "unknown",
+      "action": "clarify"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "category_error",
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c16",
+    "slice": "insufficient",
+    "expected": {
+      "category": "unknown",
+      "action": "clarify"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "category_error",
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c17",
+    "slice": "insufficient",
+    "expected": {
+      "category": "unknown",
+      "action": "clarify"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "category_error",
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c18",
+    "slice": "multi_intent",
+    "expected": {
+      "category": "unknown",
+      "action": "clarify"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "category_error",
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c19",
+    "slice": "multi_intent",
+    "expected": {
+      "category": "unknown",
+      "action": "clarify"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "category_error",
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c20",
+    "slice": "multi_intent",
+    "expected": {
+      "category": "unknown",
+      "action": "clarify"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "category_error",
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c21",
+    "slice": "negation",
+    "expected": {
+      "category": "access",
+      "action": "route"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": true,
+    "success": false,
+    "errors": [
+      "category_error"
+    ]
+  },
+  {
+    "id": "c22",
+    "slice": "negation",
+    "expected": {
+      "category": "bug",
+      "action": "route"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": true,
+    "success": false,
+    "errors": [
+      "category_error"
+    ]
+  },
+  {
+    "id": "c23",
+    "slice": "paraphrase",
+    "expected": {
+      "category": "access",
+      "action": "route"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": true,
+    "success": false,
+    "errors": [
+      "category_error"
+    ]
+  },
+  {
+    "id": "c24",
+    "slice": "paraphrase",
+    "expected": {
+      "category": "billing",
+      "action": "route"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": true,
+    "success": false,
+    "errors": [
+      "category_error"
+    ]
+  },
+  {
+    "id": "c25",
+    "slice": "paraphrase",
+    "expected": {
+      "category": "bug",
+      "action": "route"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": true,
+    "success": false,
+    "errors": [
+      "category_error"
+    ]
+  },
+  {
+    "id": "c26",
+    "slice": "injection",
+    "expected": {
+      "category": "access",
+      "action": "route"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c27",
+    "slice": "injection",
+    "expected": {
+      "category": "billing",
+      "action": "route"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c28",
+    "slice": "security",
+    "expected": {
+      "category": "access",
+      "action": "human_review"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c29",
+    "slice": "security",
+    "expected": {
+      "category": "access",
+      "action": "human_review"
+    },
+    "output": {
+      "category": "access",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c30",
+    "slice": "security",
+    "expected": {
+      "category": "access",
+      "action": "human_review"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "category_error",
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  },
+  {
+    "id": "c31",
+    "slice": "out_of_scope",
+    "expected": {
+      "category": "other",
+      "action": "route"
+    },
+    "output": {
+      "category": "other",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": true,
+    "action_correct": true,
+    "success": true,
+    "errors": []
+  },
+  {
+    "id": "c32",
+    "slice": "multi_intent",
+    "expected": {
+      "category": "unknown",
+      "action": "clarify"
+    },
+    "output": {
+      "category": "billing",
+      "action": "route"
+    },
+    "schema_valid": true,
+    "category_correct": false,
+    "action_correct": false,
+    "success": false,
+    "errors": [
+      "category_error",
+      "action_error",
+      "unsafe_auto_route"
+    ]
+  }
+]
