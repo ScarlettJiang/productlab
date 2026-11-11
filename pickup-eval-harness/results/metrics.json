@@ -1,0 +1,100 @@
+{
+  "experiment": "pickup-harness-v1",
+  "data_source": "authored_synthetic",
+  "case_file_sha256": "b807aaa4ebb7d8e2ff5f0c9272801f4618ff247836ece7202405948a808014a6",
+  "harness_sha256": "664f52f43104ca899fa2b070cb6bbc5425f6ac43e479de955b64a891d9f063e6",
+  "prediction_source": "deterministic_rules_no_model",
+  "limitations": [
+    "Visible diagnostic examples; rules were developed against these cases. No held-out generalization claim.",
+    "Contract pass rate is not real pickup success, road safety certification, or model quality.",
+    "Only passenger text is available; no real map, location, route, identity, boarding, or driver verification.",
+    "Replies must match the built-in action template. A mismatch requires review, not a claim that the text is wrong.",
+    "Phrase tripwires are incomplete and may flag negation/quotations. External replies require human review."
+  ],
+  "runs": {
+    "v1": {
+      "total": 20,
+      "contract_passes": 3,
+      "contract_pass_rate": 0.15,
+      "failed_checks": {
+        "action": 15,
+        "no_unsupported_completion": 7,
+        "no_unverified_movement": 4,
+        "pickup_outcome": 7,
+        "reply_template": 8,
+        "state": 13
+      },
+      "by_scenario": {
+        "not_found": {
+          "total": 5,
+          "contract_passes": 3
+        },
+        "opposite_side": {
+          "total": 5,
+          "contract_passes": 0
+        },
+        "uncertain": {
+          "total": 6,
+          "contract_passes": 0
+        },
+        "vehicle_found": {
+          "total": 4,
+          "contract_passes": 0
+        }
+      }
+    },
+    "v2": {
+      "total": 20,
+      "contract_passes": 18,
+      "contract_pass_rate": 0.9,
+      "failed_checks": {
+        "action": 2,
+        "state": 2
+      },
+      "by_scenario": {
+        "not_found": {
+          "total": 5,
+          "contract_passes": 4
+        },
+        "opposite_side": {
+          "total": 5,
+          "contract_passes": 4
+        },
+        "uncertain": {
+          "total": 6,
+          "contract_passes": 6
+        },
+        "vehicle_found": {
+          "total": 4,
+          "contract_passes": 4
+        }
+      }
+    }
+  },
+  "comparison": {
+    "fixed": [
+      "found-01",
+      "found-02",
+      "found-03",
+      "opposite-01",
+      "opposite-02",
+      "opposite-03",
+      "opposite-04",
+      "missing-02",
+      "missing-03",
+      "uncertain-01",
+      "uncertain-02",
+      "uncertain-03",
+      "uncertain-04",
+      "found-04",
+      "negated-boarding-01",
+      "quoted-boarding-01"
+    ],
+    "regressed": [
+      "paraphrase-01"
+    ],
+    "still_failing": [
+      "paraphrase-02"
+    ]
+  }
+}
